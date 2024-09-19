@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 rem Chck if ffmpeg is installed
 ffmpeg -version >nul 2>&1
 if ERRORLEVEL 1 (
-    echo Could not find FFMPEG
+    echo Could not find FFmpeg
     pause
     goto :EOF
 )
