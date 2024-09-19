@@ -48,11 +48,21 @@ for %%P in (normal soft drum nightcore) do (
 
 rem Create modified files
 for %%F in ("%folder_name%\*") do (
-    ffmpeg -i "%%F" -filter:a "volume=-3.5dB" "%%~nF%%~xF"
+    set "message=!file_count! | %%~nF |"
+    ffmpeg -i "%%F" -filter:a "volume=-3.5dB" "%%~nF%%~xF" >nul 2>&1
+    echo !message! Reducing volume...
     if ERRORLEVEL 1 (
-        echo ffmpeg failed for file %%~nF, copying file
-        robocopy %%~dpF %cd% %%~F
+        echo !message! FFmpeg failed, copying file...
+        robocopy "%folder_name%" . "%%~nxF" >nul 2>&1
+        if %ERRORLEVEL% GEQ 8 (
+            echo !message! Copy failed
+        ) else (
+            echo !message! Copied successfully
+        )
+    ) else (
+        echo !message! Volume reduced successfully
     )
+    set /a "file_count+=1"
 )
 
 pause
