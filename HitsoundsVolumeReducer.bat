@@ -47,6 +47,7 @@ for %%P in (normal soft drum nightcore) do (
 )
 
 rem Create modified files
+set "file_count=1"
 for %%F in ("%folder_name%\*") do (
     set "message=!file_count! | %%~nF |"
     ffmpeg -i "%%F" -filter:a "volume=-3.5dB" "%%~nF%%~xF" >nul 2>&1
