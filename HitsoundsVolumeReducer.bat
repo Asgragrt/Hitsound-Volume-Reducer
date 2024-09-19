@@ -40,7 +40,7 @@ if not exist "%folder_name%" (
 )
 
 rem Move files to hitsounds folder
-for %%P in (normal soft drum) do (
+for %%P in (normal soft drum nightcore) do (
     for %%F in (%%P*.wav %%P*.ogg %%P*.mp3) do (
         if exist "%%F" move %%F %folder_name%
     )
