@@ -14,6 +14,9 @@ Reduce hitsounds volume :D
 The file moves the original files to a subfolder `original_subfolder`.
 If it fails to modify the sound file (as with empty files) it will just copy the original file.
 
+> [!TIP]
+> [FFmpeg installation guide](https://phoenixnap.com/kb/ffmpeg-windows)
+
 [^1]: <https://www.ffmpeg.org/download.html>
 
 [^2]: <https://www.gyan.dev/ffmpeg/builds/>
