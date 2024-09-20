@@ -1,4 +1,5 @@
 @echo off
+title Hitsounds volume reducer
 setlocal enabledelayedexpansion
 
 rem Chck if ffmpeg is installed
